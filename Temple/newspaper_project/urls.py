@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,10 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('', include('pages.urls')),
     path('articles/', include('articles.urls')), #new
+    path('pages/', include('pages.urls')),
     
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+
+

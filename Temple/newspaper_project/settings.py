@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'pages', #new
     'articles', #new
     'crispy_forms',
+    'bootstrap4'
+
+    
+
 ]
 
 TIME_ZONE = 'Asia/Kolkata'
@@ -127,15 +131,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCAL_PATHS = [
-    os.path.join(BASE_DIR, 'locale')
-]
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
+
 AUTH_USER_MODEL = 'users.CustomUser1'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -146,3 +152,16 @@ EMAIL_HOST_PASSWORD = 'rahul1234'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+BOOTSTRAP3 = {
+    'theme_url':
+     #'/static/bootstrap/css/bootstrap.min.css',
+    'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css',
+}

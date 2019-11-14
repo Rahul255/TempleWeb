@@ -2,8 +2,21 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin # new
-
+from django.views import View
+from django.http import HttpResponse
+from django.shortcuts import render
 from . import models
+
+class WelcomeListView(View):
+    model = models.Article
+    template_name = 'welcome.html'
+
+    def get(self, request):
+       return render(request,'welcome.html')
+
+    def post(self,request):
+      return render(request, 'welcome.html')
+
 
 class ArticleListView(LoginRequiredMixin,ListView):
     model = models.Article
@@ -36,3 +49,13 @@ class ArticleCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class PoojaListView(View):
+    model = models.Article
+    template_name = 'pooja.html'
+
+    def get(self, request):
+       return render(request,'pooja.html')
+
+    def post(self,request):
+      return render(request, 'pooja.html')

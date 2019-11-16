@@ -59,3 +59,5 @@ class PoojaListView(View):
 
     def post(self,request):
       return render(request, 'pooja.html')
+
+

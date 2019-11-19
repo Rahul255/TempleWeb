@@ -7,6 +7,7 @@
       <title>hai NamA</title>
    </head>
    <body>
+         <div id="print-content">
          <form>
                <fieldset>
                  <legend>Pooja Details</legend>
@@ -44,9 +45,11 @@
                          <label>total</label>
                          <output id="result"></output>
                        </div>
+                       <input type="button" value="Print this page" onClick="window.print()">
            
                </fieldset>
              </form>
+             </div>
              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
              <script src="/assets/js/jquery-3.4.1.min.js"></script>
              <script>
@@ -60,8 +63,19 @@
                  });
                  $('#result').text(totalSum);
                });
-             </script>
 
+             </script>
+             <script>
+                function printDiv(divName) {
+                   var printContents = document.getElementById(divName).innerHTML;
+                   w=window.open();
+                   w.document.write(printContents);
+                   w.print();
+                   w.close();
+               }
+            
+             </script>
+             
    </body>
 </html>
 {% endblock %}

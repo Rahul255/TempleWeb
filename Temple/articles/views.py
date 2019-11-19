@@ -4,8 +4,21 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin # new
 from django.views import View
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
+from articles.form import RegistrationForm
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('signup.html', args)
+
+    else:
+        form = RegistrationForm()
+
+        args = {'form' : form}
 
 class WelcomeListView(View):
     model = models.Article
@@ -60,4 +73,32 @@ class PoojaListView(View):
     def post(self,request):
       return render(request, 'pooja.html')
 
+class PoojaTimingListView(View):
+    model = models.Article
+    template_name = 'poojaTiming.html'
 
+    def get(self, request):
+       return render(request,'poojaTiming.html')
+
+    def post(self,request):
+      return render(request, 'poojaTiming.html')
+
+class PoojaDetailListView(View):
+    model = models.Article
+    template_name = 'poojaDetail.html'
+
+    def get(self, request):
+       return render(request,'poojaDetail.html')
+
+    def post(self,request):
+      return render(request, 'poojaDetail.html')
+
+class ContactListView(View):
+    model = models.Article
+    template_name = 'contact.html'
+
+    def get(self,request):
+        return render(request, 'contact.html')
+
+    def post(self,request):
+        return render(request, 'contact.html')

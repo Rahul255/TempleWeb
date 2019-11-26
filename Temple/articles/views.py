@@ -102,3 +102,13 @@ class ContactListView(View):
 
     def post(self,request):
         return render(request, 'contact.html')
+
+class AdministrationListView(View):
+    model = models.Article
+    template_name = 'administration.html'
+
+    def get(self,request):
+        return render(request, 'administration.html')
+
+    def post(self,request):
+        return render(request, 'administration.html')

@@ -6,6 +6,7 @@ urlpatterns = [
     path('pooja/', views.PoojaListView.as_view(), name='pooja'),
     path('timing/', views.PoojaTimingListView.as_view(), name='poojaTiming'),
     path('detail/', views.PoojaDetailListView.as_view(), name='poojaDetail'),
+    path('administration/', views.AdministrationListView.as_view(), name='administration'),
     path('contact/', views.ContactListView.as_view(), name='contact'),
     path('', views.ArticleListView.as_view(), name='article_list'),
     path('<int:pk>/edit/', views.ArticleUpdateView.as_view(), name='article_edit'), # new

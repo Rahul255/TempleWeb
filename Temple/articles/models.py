@@ -2,6 +2,10 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
+
+LIST_OF_GOD = (('1', _('Krishna')))
+LIST_OF_GOD = (('1', _('Krishna')),)
+
 class Article(models.Model):
     title = models.CharField(max_length=255)
     body = models.CharField(max_length=255)

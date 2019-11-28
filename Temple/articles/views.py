@@ -43,7 +43,7 @@ class ArticleDetailView(LoginRequiredMixin,DetailView):
 
 class ArticleUpdateView(LoginRequiredMixin,UpdateView):
     model = models.Article
-    fields = ['title', 'body', ]
+    fields = ['name', 'god', 'amount',  ]
     template_name = 'article_edit.html'
     login_url = 'login'
 
@@ -56,7 +56,7 @@ class ArticleDeleteView(LoginRequiredMixin,DeleteView):
 class ArticleCreateView(LoginRequiredMixin,CreateView):
     model = models.Article
     template_name = 'article_new.html'
-    fields = ['title', 'body', 'author',]
+    fields = ['name', 'amount', 'god',]
     login_url = 'login' #new
 
     def form_valid(self, form):

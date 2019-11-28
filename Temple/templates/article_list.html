@@ -3,28 +3,32 @@
 {% block title %}Articles{% endblock %}
 
 {% block content %}
-{% for article in object_list %}
-    <div class="card">
-        <div class="card-header">
-            <span class="font-weight-bold">{{ article.title }}</span> &middot;
-            <span class="text-muted"> {{ article.body }}</span>
-        </div>
-        <div class="card-body">
-            <p>{{ article.body }}</p>
-            {% if user.is_superuser %}
-            <a href="{% url 'article_edit' article.pk %}">Edit</a> |
-            <a href="{% url 'article_delete' article.pk %}">Delete</a>
-            {% endif %}
-        </div>
-        <div class="card-footer">
-        {% for comment in article.comments.all %}
-            <p>
-                <span class="font-weight-bold">{{ comment.author }} &middot;</span>
-                {{ comment }}
-            </p>
-        {% endfor %}
-        </div>
-    </div>
-    <br />
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">God</th>
+        <th scope="col">Edit | Delete </th>
+    </tr>
+</thead>
+<tbody>
+    {% for article in object_list %}
+    <tr>
+      <th scope='row'>{{ forloop.counter }}</th>
+      <td>{{article.name}}</td>
+      <td>{{article.amount}}</td>
+       <td>{{article.god}}</td>
+      <td><a href= "{% url 'article_edit' article.pk %}" class="btn-sm btn-success text-right">Edit</a>
+        <a href= "{% url 'article_delete' article.pk %}" class="btn-sm btn-danger text-right">Delete</a></td> 
+        
+    </tr>
+</tbody>
 {% endfor %}
+</table>
+</div>
+
 {% endblock content %}

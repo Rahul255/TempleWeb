@@ -1,15 +1,17 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext as _
 
 
-LIST_OF_GOD = (('1', _('Krishna')))
-LIST_OF_GOD = (('1', _('Krishna')),)
+LIST_OF_GOD = (('Krishna', _('Krishna')), ('Ganapathi', _('Ganapathi')), ('Devi', _('Devi')), ('Ayyappa', _('Ayyappa')))
+
 
 class Article(models.Model):
-    title = models.CharField(max_length=255)
-    body = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    amount = models.CharField(max_length=255)
     #amount=models.CharField(max_length=255)
+    god = models.CharField(_('God'),max_length=255, choices=LIST_OF_GOD, blank=False,)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,

@@ -112,3 +112,13 @@ class AdministrationListView(View):
 
     def post(self,request):
         return render(request, 'administration.html')
+
+class AddPoojaListView(View):
+    model = models.Article
+    template_name = 'addPooja.html'
+
+    def get (self,request):
+        return render(request, 'addPooja.html')
+
+    def post(self,request):
+        return render(request, 'addPooja.html')

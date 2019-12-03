@@ -122,3 +122,16 @@ class AddPoojaListView(View):
 
     def post(self,request):
         return render(request, 'addPooja.html')
+
+class PrintListView(View):
+    model = models.Print
+    template_name = 'poojaPrint.html'
+
+    def get (self,request):
+        return render(request, 'poojaPrint.html')
+
+    def post(self,request):
+        return render(request, 'poojaPrint.html')
+
+
+

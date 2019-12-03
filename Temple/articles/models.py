@@ -39,3 +39,12 @@ class Comment(models.Model):
     def get_absolute_url(self):
         return reverse('article_list')
 
+class Print(models.Model):
+    name = models.CharField(max_length=200)
+    age = models.CharField(max_length=200)
+    date = models.DateTimeField(auto_now_add=True)
+    pooja = models.CharField(max_length=200)
+    amount = models.CharField(max_length=200)
+    result = models.CharField(max_length=200)
+
+

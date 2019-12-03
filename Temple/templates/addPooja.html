@@ -2,142 +2,251 @@
 {% load static %}
 {% block content %}
 
-<!DOCTYPE html>
+<html>
+
 <head>
+	
 
 </head>
+
 <body>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<!--Author      : @arboshiki-->
-<div id="invoice">
+	<div id="page-wrap">
 
-    <div class="toolbar hidden-print">
-        <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
-        </div>
-        <hr>
+		
+		
+		
+		
+		<div style="clear:both"></div>
+		
+		<div id="customer">
+
+           
+
+            <table id="meta">
+                <tr>
+                    <td class="meta-head">Name</td>
+                    <td><textarea></textarea></td>
+                    <span style="margin-left: 5em;">
+                            <td class="meta-head" > Age</td>
+                            <td><textarea id="date "></textarea></td>
+                            <td class="meta-head">Date</td>
+                            <td><textarea id="date"></textarea></td>
+                    </span>
+                    
+                </tr>
+                <tr>
+
+                    
+                </tr>
+                <tr>
+                   
+                </tr>
+
+            </table>
+		
+		</div>
+		
+		<table id="items">
+		
+		  <tr>
+		      <th>Item</th>
+		      <th>Description</th>
+		      <th>Unit Cost</th>
+		      <th>Quantity</th>
+		      <th>Price</th>
+		  </tr>
+		  
+		  
+		  
+		  <tr class="item-row">
+		      <td class="item-name"><div class="delete-wpr"><textarea>SSL Renewals</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
+
+		      <td class="description"><textarea>Yearly renewals of SSL certificates on main domain and several subdomains</textarea></td>
+		      <td><textarea class="cost">$75.00</textarea></td>
+		      <td><textarea class="qty">3</textarea></td>
+		      <td><span class="price">$225.00</span></td>
+		  </tr>
+		  
+		  <tr id="hiderow">
+		    <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
+		  </tr>
+		  
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line">Subtotal</td>
+		      <td class="total-value"><div id="subtotal">$875.00</div></td>
+		  </tr>
+		  <tr>
+
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line">Total</td>
+		      <td class="total-value"><div id="total">$875.00</div></td>
+		  </tr>
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line">Amount Paid</td>
+
+		      <td class="total-value"><textarea id="paid">$0.00</textarea></td>
+		  </tr>
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line balance">Balance Due</td>
+		      <td class="total-value balance"><div class="due">$875.00</div></td>
+		  </tr>
+		
+		</table>
+		
+		<div id="terms">
+		  <h5>Terms</h5>
+		  <textarea>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
+		</div>
+	
     </div>
-    <div class="invoice overflow-auto">
-        <div style="min-width: 600px">
-            <header>
-                <div class="row">
-                    <div class="col">
-                        <a target="_blank" href="https://lobianijs.com">
-                            <img src="http://lobianijs.com/lobiadmin/version/1.0/ajax/img/logo/lobiadmin-logo-text-64.png" data-holder-rendered="true" />
-                            </a>
-                    </div>
-                    <div class="col company-details">
-                        <h2 class="name">
-                            <a target="_blank" href="https://lobianijs.com">
-                            Arboshiki
-                            </a>
-                        </h2>
-                        <div>455 Foggy Heights, AZ 85004, US</div>
-                        <div>(123) 456-789</div>
-                        <div>company@example.com</div>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <div class="row contacts">
-                    <div class="col invoice-to">
-                        <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">John Doe</h2>
-                        <div class="address">796 Silver Harbour, TX 79273, US</div>
-                        <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
-                    </div>
-                    <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                        <div class="date">Date of Invoice: 01/10/2018</div>
-                        <div class="date">Due Date: 30/10/2018</div>
-                    </div>
-                </div>
-                <table border="0" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th class="text-left">DESCRIPTION</th>
-                            <th class="text-right">HOUR PRICE</th>
-                            <th class="text-right">HOURS</th>
-                            <th class="text-right">TOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="no">04</td>
-                            <td class="text-left"><h3>
-                                <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-                                Youtube channel
-                                </a>
-                                </h3>
-                               <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
-                                   Useful videos
-                               </a> 
-                               to improve your Javascript skills. Subscribe and stay tuned :)
-                            </td>
-                            <td class="unit">$0.00</td>
-                            <td class="qty">100</td>
-                            <td class="total">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="no">01</td>
-                            <td class="text-left"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">30</td>
-                            <td class="total">$1,200.00</td>
-                        </tr>
-                        <tr>
-                            <td class="no">02</td>
-                            <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">80</td>
-                            <td class="total">$3,200.00</td>
-                        </tr>
-                        <tr>
-                            <td class="no">03</td>
-                            <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">20</td>
-                            <td class="total">$800.00</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">SUBTOTAL</td>
-                            <td>$5,200.00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">TAX 25%</td>
-                            <td>$1,300.00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">GRAND TOTAL</td>
-                            <td>$6,500.00</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <div class="thanks">Thank you!</div>
-                <div class="notices">
-                    <div>NOTICE:</div>
-                    <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
-                </div>
-            </main>
-            <footer>
-                Invoice was created on a computer and is valid without the signature and seal.
-            </footer>
-        </div>
-        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
-        <div></div>
-    </div>
-</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+             <script src="/assets/js/jquery-3.4.1.min.js"></script>
+	<script>
+        function print_today() {
+  // ***********************************************
+  // AUTHOR: WWW.CGISCRIPT.NET, LLC
+  // URL: http://www.cgiscript.net
+  // Use the script, just leave this message intact.
+  // Download your FREE CGI/Perl Scripts today!
+  // ( http://www.cgiscript.net/scripts.htm )
+  // ***********************************************
+  var now = new Date();
+  var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+  var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+  function fourdigits(number) {
+    return (number < 1000) ? number + 1900 : number;
+  }
+  var today =  months[now.getMonth()] + " " + date + ", " + (fourdigits(now.getYear()));
+  return today;
+}
+
+// from http://www.mediacollege.com/internet/javascript/number/round.html
+function roundNumber(number,decimals) {
+  var newString;// The new rounded number
+  decimals = Number(decimals);
+  if (decimals < 1) {
+    newString = (Math.round(number)).toString();
+  } else {
+    var numString = number.toString();
+    if (numString.lastIndexOf(".") == -1) {// If there is no decimal point
+      numString += ".";// give it one at the end
+    }
+    var cutoff = numString.lastIndexOf(".") + decimals;// The point at which to truncate the number
+    var d1 = Number(numString.substring(cutoff,cutoff+1));// The value of the last decimal place that we'll end up with
+    var d2 = Number(numString.substring(cutoff+1,cutoff+2));// The next decimal, after the last one we want
+    if (d2 >= 5) {// Do we need to round up at all? If not, the string will just be truncated
+      if (d1 == 9 && cutoff > 0) {// If the last digit is 9, find a new cutoff point
+        while (cutoff > 0 && (d1 == 9 || isNaN(d1))) {
+          if (d1 != ".") {
+            cutoff -= 1;
+            d1 = Number(numString.substring(cutoff,cutoff+1));
+          } else {
+            cutoff -= 1;
+          }
+        }
+      }
+      d1 += 1;
+    } 
+    if (d1 == 10) {
+      numString = numString.substring(0, numString.lastIndexOf("."));
+      var roundedNum = Number(numString) + 1;
+      newString = roundedNum.toString() + '.';
+    } else {
+      newString = numString.substring(0,cutoff) + d1.toString();
+    }
+  }
+  if (newString.lastIndexOf(".") == -1) {// Do this again, to the new string
+    newString += ".";
+  }
+  var decs = (newString.substring(newString.lastIndexOf(".")+1)).length;
+  for(var i=0;i<decimals-decs;i++) newString += "0";
+  //var newNumber = Number(newString);// make it a number if you like
+  return newString; // Output the result to the form field (change for your purposes)
+}
+
+function update_total() {
+  var total = 0;
+  $('.price').each(function(i){
+    price = $(this).html().replace("$","");
+    if (!isNaN(price)) total += Number(price);
+  });
+
+  total = roundNumber(total,2);
+
+  $('#subtotal').html("$"+total);
+  $('#total').html("$"+total);
+  
+  update_balance();
+}
+
+function update_balance() {
+  var due = $("#total").html().replace("$","") - $("#paid").val().replace("$","");
+  due = roundNumber(due,2);
+  
+  $('.due').html("$"+due);
+}
+
+function update_price() {
+  var row = $(this).parents('.item-row');
+  var price = row.find('.cost').val().replace("$","") * row.find('.qty').val();
+  price = roundNumber(price,2);
+  isNaN(price) ? row.find('.price').html("N/A") : row.find('.price').html("$"+price);
+  
+  update_total();
+}
+
+function bind() {
+  $(".cost").blur(update_price);
+  $(".qty").blur(update_price);
+}
+
+$(document).ready(function() {
+
+  $('input').click(function(){
+    $(this).select();
+  });
+
+  $("#paid").blur(update_balance);
+   
+  $("#addrow").click(function(){
+    $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea>Item Name</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea>Description</textarea></td><td><textarea class="cost">$0</textarea></td><td><textarea class="qty">0</textarea></td><td><span class="price">$0</span></td></tr>');
+    if ($(".delete").length > 0) $(".delete").show();
+    bind();
+  });
+  
+  bind();
+  
+  $(".delete").live('click',function(){
+    $(this).parents('.item-row').remove();
+    update_total();
+    if ($(".delete").length < 2) $(".delete").hide();
+  });
+  
+  $("#cancel-logo").click(function(){
+    $("#logo").removeClass('edit');
+  });
+  $("#delete-logo").click(function(){
+    $("#logo").remove();
+  });
+  $("#change-logo").click(function(){
+    $("#logo").addClass('edit');
+    $("#imageloc").val($("#image").attr('src'));
+    $("#image").select();
+  });
+  $("#save-logo").click(function(){
+    $("#image").attr('src',$("#imageloc").val());
+    $("#logo").removeClass('edit');
+  });
+  
+  $("#date").val(print_today());
+  
+});
+    </script>
 </body>
+
 </html>
 {% endblock %}

@@ -114,7 +114,7 @@ class AdministrationListView(View):
         return render(request, 'administration.html')
 
 class AddPoojaListView(View):
-    model = models.Article
+    model = models.Print
     template_name = 'addPooja.html'
 
     def get (self,request):

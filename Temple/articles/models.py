@@ -19,7 +19,7 @@ class Article(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def get_absolute_url(self):
         return reverse('article_detail', args=[str(self.id)])
@@ -40,11 +40,22 @@ class Comment(models.Model):
         return reverse('article_list')
 
 class Print(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='pooja')
     age = models.CharField(max_length=200)
-    date = models.DateTimeField(auto_now_add=True)
+    
     pooja = models.CharField(max_length=200)
     amount = models.CharField(max_length=200)
     result = models.CharField(max_length=200)
+
+    author = models.ForeignKey(
+    settings.AUTH_USER_MODEL,
+    on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.pooja
+
+    def get_absolute_url(self):
+        return reverse('article_list')
 
 

@@ -10,5 +10,9 @@ class ArticleAdmin(admin.ModelAdmin):
         CommentInline,
     ]
 
+class PoojaInline(admin.StackedInline):
+    model = models.Print
+    
 admin.site.register(models.Article, ArticleAdmin)
 admin.site.register(models.Comment)
+admin.site.register(models.Print)

@@ -8,107 +8,101 @@
 	
 
 </head>
-
 <body>
-
-	<div id="page-wrap">
-
-		
-		
-		
-		
-		<div style="clear:both"></div>
-		
-		<div id="customer">
-
-        </br></br></br>
-
-            <table id="meta">
-                <tr>
-                    <td class="meta-head">Name</td>
-                    <td><textarea></textarea></td>
-                    <span style="margin-left: 5em;">
-                            <td class="meta-head" > Age</td>
-                            <td><textarea id="date "></textarea></td>
-                            <td class="meta-head">Date</td>
-                            <td><textarea id="date"></textarea></td>
-                    </span>
-                    
-                </tr>
-                <tr>
-
-                    
-                </tr>
-                <tr>
-                   
-                </tr>
-
-            </table>
-		
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+       
+        <div class="container">
+            <div class="row">
+                <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <address>
+                                <strong>{{pooja.name}}</strong>
+                                <br />
+                                2135 Sunset Blvd
+                                <br />
+                                Los Angeles, CA 90026
+                                <br />
+                                <abbr title="Phone">P:</abbr> (213) 484-6829
+                            </address>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                            <p>
+                                <em>Date: 1st November, 2013</em>
+                            </p>
+                            <p>
+                                <em>Receipt #: 34522677W</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center">
+                            <h1>Receipt</h1>
+                        </div>
+                        
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>#</th>
+                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-9"><em>Baked Rodopa Sheep Feta</em></td>
+                                    <td class="col-md-1" style="text-align: center"> 2 </td>
+                                    <td class="col-md-1 text-center">$13</td>
+                                    <td class="col-md-1 text-center">$26</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9"><em>Lebanese Cabbage Salad</em></td>
+                                    <td class="col-md-1" style="text-align: center"> 1 </td>
+                                    <td class="col-md-1 text-center">$8</td>
+                                    <td class="col-md-1 text-center">$8</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9"><em>Baked Tart with Thyme and Garlic</em></td>
+                                    <td class="col-md-1" style="text-align: center"> 3 </td>
+                                    <td class="col-md-1 text-center">$16</td>
+                                    <td class="col-md-1 text-center">$48</td>
+                                </tr>
+                                <tr>
+                                    <td>   </td>
+                                    <td>   </td>
+                                    <td class="text-right">
+                                    <p>
+                                        <strong>Subtotal: </strong>
+                                    </p>
+                                    <p>
+                                        <strong>Tax: </strong>
+                                    </p></td>
+                                    <td class="text-center">
+                                    <p>
+                                        <strong>$6.94</strong>
+                                    </p>
+                                    <p>
+                                        <strong>$6.94</strong>
+                                    </p></td>
+                                </tr>
+                                <tr>
+                                    <td>   </td>
+                                    <td>   </td>
+                                    <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                                    <td class="text-center text-danger"><h4><strong>$31.53</strong></h4></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-success btn-lg btn-block">
+                            Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </br></br></br>
-		
-		<table class="table table-bordered">
-		
-		  <tr>
-		      <th>Item</th>
-		      <th>Description</th>
-		      <th>Unit Cost</th>
-		      <th>Quantity</th>
-		      <th>Price</th>
-		  </tr>
-		  
-		  
-		  
-		  <tr class="item-row">
-		      <td class="item-name">
-                  <div class="delete-wpr"><textarea></textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
-
-		      <td class="description"><textarea></textarea></td>
-		      <td><textarea class="cost"></textarea></td>
-              <td><textarea class="qty"></textarea></td>
-              <td><textarea class="price" id="price"></textarea></td>
-		      
-		  </tr>
-		  
-		  <tr id="hiderow">
-		    <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
-		  </tr>
-		  
-		  <tr>
-		      <td colspan="2" class="blank"> </td>
-		      <td colspan="2" class="total-line">Subtotal</td>
-		      <td class="total-value"><div id="subtotal"></div></td>
-		  </tr>
-		  
-		
-		</table>
-		
-		
-	
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-             <script src="/assets/js/jquery-3.4.1.min.js"></script>
-    <script>
-        $('.item-row').on('input','.price','.addrow',function(){
-	    var totalSum = 0;
-	    $('.item-row .price').each(function(){
-		    var inputVal = $(this).val();
-		    if($.isNumeric(inputVal)){
-			    totalSum += parseFloat(inputVal);
-		    }
-		    });
-		$('#subtotal').text(totalSum);
-        });
-        
-        $("#addrow").click(function(){
-        $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea>Item Name</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea>Description</textarea></td><td><textarea class="cost"></textarea></td><td><textarea class="qty"></textarea></td><td><textarea class="price"></textarea></td></tr>');
-         if ($(".delete").length > 0) $(".delete").show();
-        bind();
-        });
-    </script>
-	
 </body>
-
 </html>
 {% endblock %}

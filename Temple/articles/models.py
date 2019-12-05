@@ -40,9 +40,9 @@ class Comment(models.Model):
         return reverse('article_list')
 
 class Print(models.Model):
-    name = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='pooja')
+    name = models.CharField(max_length=200)
     age = models.CharField(max_length=200)
-    
+    poojano = models.CharField(max_length=200, null=True, blank=True, unique=True)
     pooja = models.CharField(max_length=200)
     amount = models.CharField(max_length=200)
     result = models.CharField(max_length=200)
@@ -53,7 +53,8 @@ class Print(models.Model):
     )
 
     def __str__(self):
-        return self.pooja
+        super(Print, self).__init__()
+        self.poojano = str(uuid.uuid4())
 
     def get_absolute_url(self):
         return reverse('article_list')
